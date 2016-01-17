@@ -2,13 +2,14 @@ package me.binwang.web_benchmark
 
 import akka.actor.ActorSystem
 import com.typesafe.config.ConfigFactory
-import redis.{RedisServer, RedisClientPool}
+import redis.{RedisDispatcher, RedisServer, RedisClientPool}
 
 object Config {
 
   val config = ConfigFactory.load()
 
   implicit val akkaSystem = ActorSystem("web-benchmark")
+  implicit val redisDispatcher = RedisDispatcher("akka.actor.default-dispatcher")
 
   val futureDispatcher = config.getString("future-dispatcher")
   val executionContext = Config.akkaSystem.dispatchers.lookup(futureDispatcher)
