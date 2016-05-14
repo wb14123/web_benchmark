@@ -24,7 +24,11 @@ Akka is powerful but need some configurations to reach better performance. One o
 Run
 --------------
 
-You should have `sbt` installed in order to compile and run this project. Run `sbt dist` will generate a zip package in `target/universal`. Unzip it and run the scripts under `bin/`.
+* You should have `sbt` installed in order to compile and run this project.
+* Run `sbt dist` will generate a zip package in `target/universal`. Then unzip it.
+* Change the default Redis address under `conf/application.conf` if needed.
+* Unzip it and run the scripts under `bin/`.
+* There are two urls you can test: `/get?key=1` and `/set?key=k&value=v`. Which will get and set key for Redis.
 
 
 Performance
