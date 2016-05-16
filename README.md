@@ -34,5 +34,5 @@ Run
 Performance
 ------------
 
-You can use wrk or ab to do load test. This project achieves about **70k QPS** on an c4.8xlarge EC2 instance.
+You can use wrk or ab to do load test. This project achieves about **150k QPS** on an c4.8xlarge EC2 instance.
 
