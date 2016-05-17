@@ -24,7 +24,7 @@ class Service extends Actor with HttpService with Json4sSupport {
     } ~ path ("set") {
       get {
         parameter('key, 'value) { (key, value) =>
-          complete(Config.redisClient.set[String](key, value))
+          complete(Config.redisClient.set[String](key, value).map{_ => Map(key -> value)})
         }
       }
     } ~ path ("none") {
